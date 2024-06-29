@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Bienvenida - Menoss Supermercado</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>BIENVENIDO!</h1>
+    </header>
+    <main>
+        <section id="formulario">
+            <h2>¡Bienvenido a Superbodega Menoss!</h2>
+            <form id="welcomeForm">
+                <div class="form-group">
+                    <label for="nombre">¿Cuál es tu nombre?</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Enviar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('welcomeForm');
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); 
+
+                const nombre = document.getElementById('nombre').value;
+
+                alert(`Bienvenido a Superbodega Menoss, ${nombre}! Aquí encontrarás los mejores precios.`);
+
+                window.location.href = 'pagina_principal.html';
+            });
+        });
+    </script>
+</body>
+</html>
